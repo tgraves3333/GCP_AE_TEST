@@ -1,0 +1,39 @@
+{
+  "name": "rnaAuth",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "My first NodeJS Project",
+  "keywords": [],
+  "author": "Theo Graves",
+  "license": "",
+  "main": "app.js",
+  "dependencies": {
+    "asyncawait": "^1.0.7",
+    "express": "3.x.x",
+    "mongodb": "^3.1.1",
+    "volos-analytics-apigee": "",
+    "volos-analytics-common": "",
+    "volos-analytics-memory": "",
+    "volos-cache-apigee": "",
+    "volos-cache-memory": "",
+    "volos-cache-redis": "",
+    "volos-oauth-apigee": "",
+    "volos-oauth-redis": "",
+    "volos-quota-apigee": "",
+    "volos-quota-memory": "",
+    "volos-quota-redis": "",
+    "volos-spikearrest-memory": ""
+  },
+  "devDependencies": {
+    "should": "4.4.x",
+    "supertest": "0.15.x"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "api": {
+    "name": "rnaAuth",
+    "basePath": "/rnaAuth",
+    "main": "app.js"
+  }
+}

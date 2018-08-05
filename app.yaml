@@ -1,0 +1,14 @@
+#GCP - Apigee
+#runtime: nodejs8
+# runtimeVersion:8
+# application:rnaAuth
+# env:
+#   - name: NODE_ENV
+#     value: test
+#   - name: LOG_LEVEL
+#     value:3
+
+# GCP - App Engine
+runtime: nodejs8
+
+# service: rnaauth

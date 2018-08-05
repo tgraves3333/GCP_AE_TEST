@@ -1,0 +1,6 @@
+
+#Config files - Connection Info
+config/
+
+#NPM modules
+node_modules/
