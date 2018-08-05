@@ -9,8 +9,10 @@
   "main": "app.js",
   "dependencies": {
     "asyncawait": "^1.0.7",
+    "conf": "^2.0.0",
     "express": "3.x.x",
     "mongodb": "^3.1.1",
+    "nconf": "^0.10.0",
     "volos-analytics-apigee": "",
     "volos-analytics-common": "",
     "volos-analytics-memory": "",

@@ -1,7 +1,8 @@
 
 //var env = process.env.NODE_ENV || 'development';
-var env = 'development';
-var config = require('../../config/config.js')[env];
+//var env = 'development';
+//var config = require('../../config/config.js')[env];
+var configuration = require('../../config');
 
 var async = require('asyncawait/async');
 var wait = require('asyncawait/await');
@@ -12,7 +13,7 @@ const MongoClient = require('mongodb').MongoClient
 // For strategies on handling credentials, visit 12factor: https://12factor.net/config.
 //const URI = "mongodb://app_user:209xm1ga@172.16.136.29:27017/Security?authSource=admin";
 //const URI = "mongodb://app_user:209xm1ga@35.185.80.72:27017/Security?authSource=admin";
-const mongoURL = "mongodb://"
+/*const mongoURL = "mongodb://"
         + config.database.user
         + ":"
         + config.database.pwd
@@ -21,13 +22,25 @@ const mongoURL = "mongodb://"
         + ":"
         + config.database.port
         + "/"
-        + config.database.auth_db; 
+        + config.database.auth_db; */
+
+var mongoURL = "mongodb://"
+        + configuration.get("database_user")
+        + ":"
+        + configuration.get("database_pwd")
+        + "@"
+        + configuration.get("database_host")
+        + ":"
+        + configuration.get("database_port")
+        + "/"
+        + configuration.get("database_auth_db"); 
+
 console.log("Printing MongoConnection URL:" + mongoURL);
 
 function connect(url) {
   // return MongoClient.connect(url).then(client => client.db())
   return MongoClient.connect(url, {poolSize: 10}).then(function(client){
-    console.log('Connected to Mongodb: ' + config.database.host + ':' + config.database.port);
+    console.log('Connected to Mongodb: ' + configuration.get("database_host") + ':' + configuration.get("database_port"));
   	return client.db()
   })
 }

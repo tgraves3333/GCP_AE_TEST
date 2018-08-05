@@ -2,9 +2,8 @@
 
 console.log("Node JS APP -- Start UP")
 
-//var env = process.env.NODE_ENV || 'development';
-var env = 'development';
-var config = require('./config/config.js')[env];
+//var config = require('../config/config');
+var config = require('./config');
 
 var express = require('express');
 var app = express();
@@ -28,8 +27,10 @@ module.exports = app; // for testing
     res.end(JSON.stringify(err));
   });
 
-  var ip = process.env.IP || config.server.host;
-  var port = process.env.PORT || config.server.port;
+//  var ip = process.env.IP || config.server.host;
+//  var port = process.env.PORT || config.server.port;
+var ip = config.get("server_host");
+var port = config.get("server_port");
 
 // *********** START
 console.log(" before attempt to connect to mongodb");
